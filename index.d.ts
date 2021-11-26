@@ -35,6 +35,7 @@ export interface SearchBarProps {
     onChangeText?: (text?: string) => void,
     textInputProps?: TextInputProps,
     style?: SearchBarStyle,
+    testIDLabel?:string,
 }
 
 export default class SearchBar extends React.PureComponent<SearchBarProps> {
