@@ -33,7 +33,7 @@ export default class SearchBar extends React.PureComponent {
     };
 
     _renderTextInput = () => {
-        const {placeholder, placeholderTextColor, textInputProps, onSubmitEditing, autoFocus, searchText} = this.props;
+        const {placeholder, placeholderTextColor, textInputProps, onSubmitEditing, autoFocus, searchText, testIDLabel} = this.props;
         return (
             <TextInput
                 testID={`${testIDLabel}_搜索TextInput`}
