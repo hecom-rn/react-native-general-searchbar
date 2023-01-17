@@ -23,6 +23,14 @@ export default class SearchBar extends React.PureComponent {
         this.props.onChangeText && this.props.onChangeText(text);
     };
 
+    _onClearText = () => {
+        this._onTextChange('');
+        if (this.props.onClearText ) {
+            this.searchInput?.clear();
+            this.props.onClearText();
+        }
+    };
+
     _renderSearchImage = () => {
         return (
             <Image
@@ -44,7 +52,7 @@ export default class SearchBar extends React.PureComponent {
                 returnKeyType='search'
                 onSubmitEditing={onSubmitEditing}
                 autoFocus={autoFocus}
-                value={searchText}
+                value={searchText || undefined}
                 onChangeText={this._onTextChange}
                 onFocus={() => this._onTextChange(searchText)}
                 autoCorrect={false}
@@ -59,7 +67,7 @@ export default class SearchBar extends React.PureComponent {
         return (
             <TouchableOpacity
                 style={this._mergeStyle('searchEmptyTouch')}
-                onPress={() => this._onTextChange('')}
+                onPress={() => this._onClearText()}
             >
                 <Image
                     source={require('./image/search_empty.png')}

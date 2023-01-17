@@ -33,6 +33,7 @@ export interface SearchBarProps {
     onPressCancel?: () => void,
     onSubmitEditing?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void,
     onChangeText?: (text?: string) => void,
+    onClearText?: () => void,
     textInputProps?: TextInputProps,
     style?: SearchBarStyle,
     testIDLabel?:string,
