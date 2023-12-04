@@ -95,8 +95,8 @@ export default class SearchBar extends React.PureComponent {
     };
 
     render() {
-        const {canCancel, canClear, isSearching, style} = this.props;
-        const hasClear = canClear && isSearching;
+        const {canCancel, canClear, isSearching, searchText} = this.props;
+        const hasClear = canClear && isSearching && searchText?.length > 0;
         const hasCancel = canCancel && isSearching;
         return (
             <View style={this._mergeStyle('view')}>
