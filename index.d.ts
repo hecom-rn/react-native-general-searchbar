@@ -55,6 +55,7 @@ export interface FakeSearchBarProps {
     image?: ImageSourcePropType,
     activeOpacity?: number,
     style?: FakeSearchBarStyle,
+    testIDPrefix?: string,
 }
 
 export class FakeSearchBar extends React.PureComponent<FakeSearchBarProps> {
