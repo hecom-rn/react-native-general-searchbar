@@ -9,6 +9,7 @@ export default class FakeSearchBar extends React.PureComponent {
         placeholder: '搜索',
         activeOpacity: 0.9,
         style: {},
+        testIDPrefix: 'fakeSearchBar',
     };
 
     _mergeStyle = (key) => [FakeSearchBar.style[key] || styles[key], this.props.style[key]];
@@ -19,10 +20,11 @@ export default class FakeSearchBar extends React.PureComponent {
             image = require('./image/input_search.png'),
             onFocus,
             activeOpacity,
-            style
+            testIDPrefix = 'fakeSearchBar',
         } = this.props;
         return (
             <TouchableOpacity
+                testID={`${testIDPrefix}TouchableOpacity`}
                 onPress={onFocus}
                 style={this._mergeStyle('touch')}
                 activeOpacity={activeOpacity}
