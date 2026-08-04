@@ -44,7 +44,7 @@ export default class SearchBar extends React.PureComponent {
         const {placeholder, placeholderTextColor, textInputProps, onSubmitEditing, autoFocus, searchText, testIDLabel} = this.props;
         return (
             <TextInput
-                testID={`${testIDLabel}_搜索TextInput`}
+                testID={testIDLabel ? `${testIDLabel}_搜索TextInput` : 'searchBar_搜索TextInput'}
                 ref={(ref) => this.searchInput = ref}
                 style={this._mergeStyle('searchInput')}
                 placeholder={placeholder}
